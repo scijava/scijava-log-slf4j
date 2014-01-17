@@ -49,8 +49,7 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>license-maven-plugin</artifactId>
 				<configuration>
-					<licenseName>scijava</licenseName>
-					<licenseResolver>file://${basedir}/../license</licenseResolver>
+					<licenseName>bsd_2</licenseName>
 					<organizationName>Board of Regents of the University of
 Wisconsin-Madison, Broad Institute of MIT and Harvard, and Max Planck
 Institute of Molecular Cell Biology and Genetics.</organizationName>
