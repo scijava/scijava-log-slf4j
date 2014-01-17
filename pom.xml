@@ -17,6 +17,7 @@
 
 	<name>SciJava Common: SLF4J Logging</name>
 	<description>This adapter package enables the use of SLF4J-based logging within SciJava Common's logging framework. It is kept separate from the SciJava Common core classes to avoid proliferating SLF4J dependencies to downstream code that does not need SLF4J-based logging.</description>
+	<inceptionYear>2013</inceptionYear>
 
 	<dependencies>
 		<dependency>
@@ -57,7 +58,6 @@
 				<configuration>
 					<licenseName>scijava</licenseName>
 					<licenseResolver>file://${basedir}/../license</licenseResolver>
-					<inceptionYear>2009</inceptionYear>
 					<organizationName>Board of Regents of the University of
 Wisconsin-Madison, Broad Institute of MIT and Harvard, and Max Planck
 Institute of Molecular Cell Biology and Genetics.</organizationName>
