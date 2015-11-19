@@ -15,7 +15,6 @@
 	<name>SciJava Common: SLF4J Logging</name>
 	<description>This adapter package enables the use of SLF4J-based logging within SciJava Common's logging framework. It is kept separate from the SciJava Common core classes to avoid proliferating SLF4J dependencies to downstream code that does not need SLF4J-based logging.</description>
 	<inceptionYear>2013</inceptionYear>
-
 	<licenses>
 		<license>
 			<name>Simplified BSD License</name>
@@ -68,12 +67,10 @@
 		<tag>HEAD</tag>
 		<url>https://github.com/scijava/scijava-common</url>
 	</scm>
-
 	<issueManagement>
 		<system>GitHub Issues</system>
 		<url>https://github.com/scijava/scijava-log-slf4j/issues</url>
 	</issueManagement>
-
 	<ciManagement>
 		<system>Jenkins</system>
 		<url>http://jenkins.imagej.net/job/SciJava-Log-SLF4J/</url>
@@ -118,5 +115,4 @@ Wisconsin-Madison.</organizationName>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
