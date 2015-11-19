@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>scijava-log-slf4j</artifactId>
-	<version>1.0.3-SNAPSHOT</version>
+	<version>1.0.3</version>
 
 	<name>SciJava SLF4J Logging</name>
 	<description>This adapter package enables the use of SLF4J-based logging within SciJava Common's logging framework. It is kept separate from the SciJava Common core classes to avoid proliferating SLF4J dependencies to downstream code that does not need SLF4J-based logging.</description>
@@ -70,7 +70,7 @@
 	<scm>
 		<connection>scm:git:git://github.com/scijava/scijava-common</connection>
 		<developerConnection>scm:git:git@github.com:scijava/scijava-common</developerConnection>
-		<tag>HEAD</tag>
+		<tag>scijava-log-slf4j-1.0.3</tag>
 		<url>https://github.com/scijava/scijava-common</url>
 	</scm>
 	<issueManagement>
