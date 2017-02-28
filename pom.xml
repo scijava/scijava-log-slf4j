@@ -63,8 +63,8 @@
 		<url>https://github.com/scijava/scijava-log-slf4j/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Jenkins</system>
-		<url>http://jenkins.imagej.net/job/SciJava-Log-SLF4J/</url>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/scijava/scijava-log-slf4j</url>
 	</ciManagement>
 
 	<dependencies>
