@@ -177,6 +177,11 @@ public final class SLF4JLogService extends AbstractService implements
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public void setLevel(final String classOrPackageName, final int level) {
+		throw new UnsupportedOperationException();
+	}
+
 	// -- Service methods --
 
 	@Override

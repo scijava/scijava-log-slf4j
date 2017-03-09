@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>10.5.0</version>
+		<version>14.0.0</version>
 		<relativePath />
 	</parent>
 
@@ -14,7 +14,12 @@
 
 	<name>SciJava SLF4J Logging</name>
 	<description>This adapter package enables the use of SLF4J-based logging within SciJava Common's logging framework. It is kept separate from the SciJava Common core classes to avoid proliferating SLF4J dependencies to downstream code that does not need SLF4J-based logging.</description>
+	<url>https://imagej.net/Logging</url>
 	<inceptionYear>2013</inceptionYear>
+	<organization>
+		<name>SciJava</name>
+		<url>https://scijava.org/</url>
+	</organization>
 	<licenses>
 		<license>
 			<name>Simplified BSD License</name>
@@ -52,11 +57,21 @@
 		</contributor>
 	</contributors>
 
+	<mailingLists>
+		<mailingList>
+			<name>SciJava</name>
+			<subscribe>https://groups.google.com/group/scijava</subscribe>
+			<unsubscribe>https://groups.google.com/group/scijava</unsubscribe>
+			<post>scijava@googlegroups.com</post>
+			<archive>https://groups.google.com/group/scijava</archive>
+		</mailingList>
+	</mailingLists>
+
 	<scm>
-		<connection>scm:git:git://github.com/scijava/scijava-common</connection>
-		<developerConnection>scm:git:git@github.com:scijava/scijava-common</developerConnection>
+		<connection>scm:git:git://github.com/scijava/scijava-log-slf4j</connection>
+		<developerConnection>scm:git:git@github.com:scijava/scijava-log-slf4j</developerConnection>
 		<tag>HEAD</tag>
-		<url>https://github.com/scijava/scijava-common</url>
+		<url>https://github.com/scijava/scijava-log-slf4j</url>
 	</scm>
 	<issueManagement>
 		<system>GitHub Issues</system>
@@ -66,6 +81,14 @@
 		<system>Travis CI</system>
 		<url>https://travis-ci.org/scijava/scijava-log-slf4j</url>
 	</ciManagement>
+
+	<properties>
+		<package-name>org.scijava.log.slf4j</package-name>
+		<license.licenseName>bsd_2</license.licenseName>
+		<license.copyrightOwners>Board of Regents of the University of
+Wisconsin-Madison.</license.copyrightOwners>
+		<license.projectName>SciJava SLF4J-based logging implementation.</license.projectName>
+	</properties>
 
 	<dependencies>
 		<!-- SciJava dependencies -->
@@ -80,29 +103,4 @@
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<packageName>org.scijava.log.slf4j</packageName>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>license-maven-plugin</artifactId>
-				<configuration>
-					<licenseName>bsd_2</licenseName>
-					<organizationName>Board of Regents of the University of
-Wisconsin-Madison.</organizationName>
-					<projectName>SciJava Common shared library for SciJava software.</projectName>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>
