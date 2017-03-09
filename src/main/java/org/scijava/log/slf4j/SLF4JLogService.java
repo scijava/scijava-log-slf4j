@@ -1,8 +1,8 @@
 /*
  * #%L
- * SciJava Common shared library for SciJava software.
+ * SciJava SLF4J-based logging implementation.
  * %%
- * Copyright (C) 2013 - 2015 Board of Regents of the University of
+ * Copyright (C) 2013 - 2017 Board of Regents of the University of
  * Wisconsin-Madison.
  * %%
  * Redistribution and use in source and binary forms, with or without
