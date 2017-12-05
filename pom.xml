@@ -88,6 +88,7 @@
 		<license.copyrightOwners>Board of Regents of the University of
 Wisconsin-Madison.</license.copyrightOwners>
 		<license.projectName>SciJava SLF4J-based logging implementation.</license.projectName>
+		<scijava-common.version>2.67.0</scijava-common.version>
 	</properties>
 
 	<dependencies>
