@@ -30,10 +30,11 @@
 
 package org.scijava.log.slf4j;
 
+import org.scijava.log.AbstractLogService;
 import org.scijava.log.DefaultUncaughtExceptionHandler;
-import org.scijava.log.LogService;
+import org.scijava.log.LogLevel;
+import org.scijava.log.LogMessage;
 import org.scijava.plugin.Plugin;
-import org.scijava.service.AbstractService;
 import org.scijava.service.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,8 +45,7 @@ import org.slf4j.LoggerFactory;
  * @author Curtis Rueden
  */
 @Plugin(type = Service.class)
-public final class SLF4JLogService extends AbstractService implements
-	LogService
+public final class SLF4JLogService extends AbstractLogService
 {
 
 	private Logger logger;
@@ -60,126 +60,11 @@ public final class SLF4JLogService extends AbstractService implements
 		this.logger = logger;
 	}
 
-	// -- LogService methods --
+	// -- AbstractLogService methods --
 
 	@Override
-	public void debug(final Object msg) {
-		logger.debug(s(msg));
-	}
-
-	@Override
-	public void debug(final Throwable t) {
-		debug("Exception", t);
-	}
-
-	@Override
-	public void debug(final Object msg, final Throwable t) {
-		logger.debug(s(msg), t);
-	}
-
-	@Override
-	public void error(final Object msg) {
-		logger.error(s(msg));
-	}
-
-	@Override
-	public void error(final Throwable t) {
-		error("Exception", t);
-	}
-
-	@Override
-	public void error(final Object msg, final Throwable t) {
-		logger.error(s(msg), t);
-	}
-
-	@Override
-	public void info(final Object msg) {
-		logger.info(s(msg));
-	}
-
-	@Override
-	public void info(final Throwable t) {
-		info("Exception", t);
-	}
-
-	@Override
-	public void info(final Object msg, final Throwable t) {
-		logger.info(s(msg), t);
-	}
-
-	@Override
-	public void trace(final Object msg) {
-		logger.trace(s(msg));
-	}
-
-	@Override
-	public void trace(final Throwable t) {
-		trace("Exception", t);
-	}
-
-	@Override
-	public void trace(final Object msg, final Throwable t) {
-		logger.trace(s(msg), t);
-	}
-
-	@Override
-	public void warn(final Object msg) {
-		logger.warn(s(msg));
-	}
-
-	@Override
-	public void warn(final Throwable t) {
-		warn("Exception", t);
-	}
-
-	@Override
-	public void warn(final Object msg, final Throwable t) {
-		logger.warn(s(msg), t);
-	}
-
-	@Override
-	public boolean isDebug() {
-		return logger.isDebugEnabled();
-	}
-
-	@Override
-	public boolean isError() {
-		return logger.isErrorEnabled();
-	}
-
-	@Override
-	public boolean isInfo() {
-		return logger.isInfoEnabled();
-	}
-
-	@Override
-	public boolean isTrace() {
-		return logger.isTraceEnabled();
-	}
-
-	@Override
-	public boolean isWarn() {
-		return logger.isWarnEnabled();
-	}
-
-	@Override
-	public int getLevel() {
-		if (isTrace()) return TRACE;
-		if (isDebug()) return DEBUG;
-		if (isInfo()) return INFO;
-		if (isWarn()) return WARN;
-		if (isError()) return ERROR;
-		return NONE;
-	}
-
-	@Override
-	public void setLevel(final int level) {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public void setLevel(final String classOrPackageName, final int level) {
-		throw new UnsupportedOperationException();
+	protected void messageLogged(LogMessage message) {
+		logSlf4j(message.level(), format(message), message.throwable());
 	}
 
 	// -- Service methods --
@@ -195,8 +80,41 @@ public final class SLF4JLogService extends AbstractService implements
 
 	// -- Helper methods --
 
+	private String format(LogMessage message) {
+		String source = message.source().toString();
+		String text = message.text();
+		if (source.isEmpty())
+			return text;
+		else
+			return source + " - " + text;
+	}
+
+	private void logSlf4j(int level, String text, Throwable t) {
+		switch (level) {
+			case LogLevel.ERROR:
+				logger.error(text, t);
+				return;
+			case LogLevel.WARN:
+				logger.warn(text, t);
+				return;
+			case LogLevel.INFO:
+				logger.info(text, t);
+				return;
+			case LogLevel.DEBUG:
+				logger.debug(text, t);
+				return;
+			case LogLevel.TRACE:
+				logger.trace(text, t);
+				return;
+			default:
+				if (level <= LogLevel.ERROR)
+					logger.error(text, t);
+				else
+					logger.trace(text, t);
+		}
+	}
+
 	private String s(final Object o) {
 		return o == null ? null : o.toString();
 	}
-
 }

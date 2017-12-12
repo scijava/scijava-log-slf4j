@@ -88,6 +88,7 @@
 		<license.copyrightOwners>Board of Regents of the University of
 Wisconsin-Madison.</license.copyrightOwners>
 		<license.projectName>SciJava SLF4J-based logging implementation.</license.projectName>
+		<scijava-common.version>2.67.0</scijava-common.version>
 	</properties>
 
 	<dependencies>
@@ -101,6 +102,19 @@ Wisconsin-Madison.</license.copyrightOwners>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+
+		<!-- Test dependencies -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>
