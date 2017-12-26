@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>14.0.0</version>
+		<version>17.2.0</version>
 		<relativePath />
 	</parent>
 
@@ -88,7 +88,8 @@
 		<license.copyrightOwners>Board of Regents of the University of
 Wisconsin-Madison.</license.copyrightOwners>
 		<license.projectName>SciJava SLF4J-based logging implementation.</license.projectName>
-		<scijava-common.version>2.67.0</scijava-common.version>
+
+		<scijava-common.version>2.69.0</scijava-common.version>
 	</properties>
 
 	<dependencies>
