@@ -78,8 +78,8 @@
 		<url>https://github.com/scijava/scijava-log-slf4j/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Travis CI</system>
-		<url>https://travis-ci.org/scijava/scijava-log-slf4j</url>
+		<system>GitHub Actions</system>
+		<url>https://github.com/scijava/scijava-log-slf4j/actions</url>
 	</ciManagement>
 
 	<properties>
@@ -90,6 +90,9 @@ Wisconsin-Madison.</license.copyrightOwners>
 		<license.projectName>SciJava SLF4J-based logging implementation.</license.projectName>
 
 		<scijava-common.version>2.69.0</scijava-common.version>
+
+		<!-- NB: Deploy releases to the SciJava Maven repository. -->
+		<releaseProfiles>sign,deploy-to-scijava</releaseProfiles>
 	</properties>
 
 	<dependencies>
