@@ -85,8 +85,7 @@
 	<properties>
 		<package-name>org.scijava.log.slf4j</package-name>
 		<license.licenseName>bsd_2</license.licenseName>
-		<license.copyrightOwners>Board of Regents of the University of
-Wisconsin-Madison.</license.copyrightOwners>
+		<license.copyrightOwners>SciJava developers.</license.copyrightOwners>
 		<license.projectName>SciJava SLF4J-based logging implementation.</license.projectName>
 	</properties>
 
